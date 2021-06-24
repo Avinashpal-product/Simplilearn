@@ -1,4 +1,7 @@
-FROM openjdk:8
-EXPOSE 8080
-ADD target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
-ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
+FROM python:3
+
+ADD my_script.py /
+
+RUN pip install pystrich
+
+CMD [ "python", "./my_script.py" ]]
